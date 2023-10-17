@@ -110,7 +110,6 @@ pwa:
   enabled: true # the option for PWA feature
 
 paginate: 4
-paginate_path: "/_tabs/pagination-needed/:num/"
 
 # The base URL of your site
 baseurl: ""
