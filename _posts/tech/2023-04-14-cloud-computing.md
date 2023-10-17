@@ -62,7 +62,7 @@ on-premise -> cloud computing
 
 #### Overview
 
-![](image-20230414110336810.png){: w="450"}
+![](20230414110336810.png){: w="450"}
 
 
 #### Bare Metal Machines
@@ -126,7 +126,7 @@ create copy if content in different geographical location, to increase access sp
 
 #### Networking Virtualization
 
-![](Pasted image 20230414221814.png){: w="450"}
+![](20230414221814.png){: w="450"}
 
 ### Compute Resources
 null
