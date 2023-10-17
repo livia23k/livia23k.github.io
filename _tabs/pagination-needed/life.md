@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Life"
-order: 3
+order: 4
 # icon: fas fa-pen-to-square
 icon: fa-solid fa-dove
 ---
