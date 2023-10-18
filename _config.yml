@@ -193,3 +193,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+# supporting site structure
+plugins: 
+  - jekyll-sitemap
