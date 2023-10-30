@@ -313,7 +313,7 @@ export default function TestingPage() {
 
 ### 4.1 Auth
 
-a sample (from [danba340/full-stack-t3-tutorial]([]https://github.com/danba340/full-stack-t3-tutorial))
+a sample (from [danba340/full-stack-t3-tutorial](https://github.com/danba340/full-stack-t3-tutorial))
 
 ```ts
 import type { GetServerSidePropsContext } from "next";
