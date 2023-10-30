@@ -483,6 +483,6 @@ enum Role {
 0. [Intro to tRPC: Integrated, full-stack TypeScript](https://www.infoworld.com/article/3690275/intro-to-trpc-integrated-full-stack-typescript.html#:~:text=tRPC%20stands%20for%20Typescript%20Remote,side%20parameters%20to%20the%20server.)
 1. [T3 Stack Tutorial - FROM 0 TO PROD FOR $0 (Next.js, tRPC, TypeScript, Tailwind, Prisma & More)](https://www.youtube.com/watch?v=YkOSUVzOAA4&t=7668s)
 2. [t3dotgg/chirp](https://github.com/t3dotgg/chirp)
-3. [danba340/full-stack-t3-tutorial]([]https://github.com/danba340/full-stack-t3-tutorial)
+3. [danba340/full-stack-t3-tutorial](https://github.com/danba340/full-stack-t3-tutorial)
 4. [Zod Doc](https://zod.dev/)
 5. [tRPC Doc](https://trpc.io/docs)
