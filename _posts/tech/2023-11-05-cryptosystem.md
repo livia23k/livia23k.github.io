@@ -249,6 +249,11 @@ For adversary, knowing $𝝋(n)$ equals to factoring. If the adversary could fin
     > Textbook RSA is homomorphic under modular multiplication, which means given $Enc_K(x)$ and $Enc_K(y)$, we could obtain $Enc_K(x \; op \; y)$ for some oprations "op". The adversary could also exploit this vulneralbility.
     {: .prompt-danger }
 
+### 1.5 Modes of Encyption for RSA
+
+[saving space]
+
+> Protect RSA from attacks.
 
 <div style="height: 20px;"></div>
 
@@ -272,6 +277,18 @@ B -> A: $g^b$
 Then on each side, they multifplied the key they got to their own private key power. So they shared the same secret at the end. (For A: $ g^{ba} $; for B: $ g^{ab} $)
 
 > Note: the $ g^{ba} $ is not used for direct message encrypt or decrypt. It is used for generating other symmetric keys later for encryption and decryption.
+
+**Vulneralbility**
+
+1. Key Exchange without Authentication. Cannot detect man-in-the-middle.
+
+> Solution: using authentication portocal.
+
+2. DoS attack caused by forced exponentiation; timing attack. 
+
+> Adversary sending arbitrary messages, looks like the exchanging expotiention key, to B. Then on B side, he must spend lots of time to compute his expotiention. So, he can't respond to other server's messages.
+>
+> Solution: Cypto cookie - MAC. If the message B received does not contain MAC messages, B will not respond to it.
 
 ### 2.2 Secure Level
 
@@ -315,18 +332,22 @@ and
 $$ |G_{p,q}| = q.$$
 
 
-> The subgroup $G$ serves as the public key. And it has to satisfy that when it was perfromed exponentiation by different number, the result should be different from any existed members in the group. So the DDH hard is satisfied. 
+> The subgroup $G$ serves as the public key. 
 > 
-> Also, we need to maximize the size of the $G$, which increases the security. So, when choosing the subgroups, we keep the ones with a $Z^\*_n$ = $n-1$.
+> P.S. And it has to satisfy that when it was perfromed exponentiation by another number in $G$, the result should exist in the $G$. It is harder for the adversary to find out the generator (public key) used in cryptosystem. Because he found the exponentiation of many generators might lead to the same result. So, the DDH hard is satisfied. 
 
 **Example**
 
 ![](dheg.png){: w="400"}
 
+> In this case, p = 7, q = 3, $G_{p,q}$ is a subgroup of $Z_p^\*$, $\|G_{p,q}\|$ = q = 3.
+
 
 ## 3. Elliptic Curve Cryptosystem
 
 ### 3.1 Intro
+
+Elliptic Curve cryptosystem is a more efficient cryptosystem based on the mathematical properties of elliptic curves.
 
 Elliptic Curve family:
 
@@ -334,15 +355,13 @@ $$E = \{(x, y): y^2 = x^3 + ax + b\} \cup \{\sigma\}$$
 
 > $\sigma$ is the "point at infinity"
 
-The goal is to use arithmetic over the curve to cauculate the encryption.
-
 ### 3.2 EC Arithmetic
 
 Given P and Q (points on the curve),
 
 ![](eccauculation.png){: w="300"}
 
-where $P + Q = R$ means $Line_{PQ}$ intersect with curve on another point R.
+Define $P + Q = R$: $Line_{PQ}$ intersects with curve on another point -R, reflecting -R in the x-axis we got R.
 
 What's more, $P + P$ means the tangent of $P$ on the curve.
 
