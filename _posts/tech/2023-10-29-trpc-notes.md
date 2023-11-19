@@ -1,5 +1,5 @@
 ---
-title: Web Dev - tRPC Notes
+title: Web Dev | tRPC Notes
 categories: [computer science, web development]
 tags: [tech, web dev, backend, learning note]
 ---
@@ -221,14 +221,14 @@ overall config of routers
 // @/server/api/root.ts
 
 import { createTRPCRouter } from "@/server/api/trpc"
-import { trainingRouter } from "./routers/training"
+import { xxxRouter } from "./routers/xxx"
 
 /**
 * This is the primary router for your server. All routers added in /api/routers should be manually added here.
 */
 
 export const appRouter = createTRPCRouter({
-	training: trainingRouter,
+	xxx: xxxRouter,
 })
 
 // export type definition of API
@@ -290,19 +290,19 @@ import { api } from "@/trpc/react"
 import { Button } from "@chakra-ui/react"
 
 export default function TestingPage() {
-  const createXXX = api.training.create.useMutation()
+  const createXXX = api.xxx.create.useMutation()
 
   return (
     <Button
       onClick={() =>
-        createTrainingSession.mutate({
+        createXXX.mutate({
           column1: "test",
           column2: "test",
           column3: "test",
         })
       }
     >
-      Create Training Session
+      Create XXX Test
     </Button>
   )
 }

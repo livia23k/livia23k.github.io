@@ -1,7 +1,7 @@
 ---
-title: 18730 - Introduction to Computer Security - Authentication
+title: Security | Authentication
 categories: [computer science, security]
-tags: [tech, computer security, 23fall, review, xmind]
+tags: [tech, computer security, 23fall, 18-730, review, xmind]
 ---
 
 Download for best reading experience.
