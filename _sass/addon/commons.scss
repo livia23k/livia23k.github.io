@@ -1465,13 +1465,13 @@ search {
   }
 }
 
-@media all and (min-width: 1400px) {
+@media all and (min-width: $panel-hidden-width) {
   #back-to-top {
     right: calc((100vw - $sidebar-width - 1140px) / 2 + 3rem);
   }
 }
 
-@media all and (min-width: 1650px) {
+@media all and (min-width: $sidebar-hidden-width) {
   $icon-gap: 1rem;
 
   #main-wrapper {
@@ -1533,4 +1533,4 @@ search {
       }
     }
   }
-} /* min-width: 1650px */
+} /* min-width: $sidebar-hidden-width */
