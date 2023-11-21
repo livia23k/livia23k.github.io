@@ -206,4 +206,97 @@ Has very small attack boundaries.
 
 ## Architecture for Application Isolation
 
+### Separation Kernel
+
+#### Fined Structure
+
+![](virtual2.png){: w="600px"}
+
+#### Hardware Abstraction
+
+**Illustration**
+
+![](sepkill.png){: w="200px"}
+
+**(Sepeation Kernel) Partitions**
+
+1. Data isolation
+> Data inaccessible from outside partitions
+
+2. Information-Flow isolation
+> Information flows between partitions are only via controlled channels
+    - periods processing
+    > By strictly defining the executing time of each partition, it could prevent data leak to other partitions.
+
+3. Fault isolation
+> Effects of faults in a partition does not spread to other partitions.
+
+- Pros & Cons
+
+    - minimizes size/form-factor, weight, power 
+    - minimizes exposed communication-network fabric
+    - maximizes partition switching speed
+
+**Controlled Channels**
+
+Compositions:
+
+Exist between two partitions
+
+- Port
+> a restricted Read-only extension to the state of the Destination partition;
+
+- Source
+> pointing to the communication source, is able to read & write port;
+
+- Destination
+> arrow identifying the partition whose state is extended
+    
+Properties:
+
+- Unidirectional
+> no (limited) information flow from Destination to Source
+
+- Confidential
+> only destination could read port
+
+- Authentic
+> only source could write port
+
+#### Other Separation Abstraction
+
+- Physical
+> implemented with physically separate resources and command lines
+
+![](phypart.png){: w="200px"}
+
+- Cryptographic
+> Encryption, authentication and authenticated encryption of stored data and communication messages
+
+- Static Analysis
+> Program analysis to guarantee information flow from one program to another;
+> 
+> requires closure of all programs in a system
+
+#### Partitioning Communication System
+
+![](partsys.png){: w="450px"}
+
+#### Application
+
+Applicable:
+
+1. Minimal hypervisor
+> but not for Virtual Machine Monitors
+
+2. Multi-level Security Application
+> communication between high and low level application
+
+Not applicable:
+
+1. Commodity workstations
+> complex, out-of-date assurance
+
+
+
 [saving space]
