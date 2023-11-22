@@ -282,6 +282,19 @@ Properties:
 
 ![](partsys.png){: w="450px"}
 
+**Policy**
+
+Pump:
+> A pump is a trusted program in a separate partition that moves data from a low security level to a high security level without returning acknowledgements except in a controlled way; e.g., very slowly, in batches.
+
+Trusted Guard:
+> A guard is a trusted program in a separate partition that moves data from a high security level to a law security level by removing (i.e., scrubbing) all sensitive information or by creating a cover story (i.e., modifying data with non-sensitive information).
+
+Crypto Separation:
+> Classifying sensitive plaintext (red) and ciphertext (black). Ensure no red data transferred to black (untrusted) partition.
+> 
+> Adding header and encrypt the plaintext (red) to a ciphertext (black). Then could transfer it to black partition.
+
 #### Application
 
 Applicable:
@@ -292,11 +305,43 @@ Applicable:
 2. Multi-level Security Application
 > communication between high and low level application
 
+3. Red-Black Crypto Controller
+> The red-black separation is intended to transform and move red (classified) data to black (unclassified) data by trusted message encryption and trusted header-information control. That is no information from the red partition can move to the black partition.
+
+    need four partitions
+    > red, header, encryption, black
+
+    need four channels for communication 
+    > red-> header, red -> encryption, header -> black and encryption -> black
+    
+    ![](rbcc.png){: w="400px"}
+
 Not applicable:
 
 1. Commodity workstations
 > complex, out-of-date assurance
 
+### Security Kernel
 
+#### Properties
 
-[saving space]
+1. Isolated
+> have only several entry points where kernel could transfer control only to the caller
+> 
+> kernel entry/call parameters must be checked when passed by value
+>
+> timing consistency of access checks (Time-of-check-to-time-of-use atomicity)
+
+2. Complete reference mediation
+> all references to an object by a user process/program must be checked for the permission allowed by the access-control policy component of the kernel
+>
+> applied by any policy
+
+3. Small enough to be verifiable
+> does not contain large systems like file system and dir. system
+
+### Separation Kernels vs. Security Kernels vs. VM Monitors
+
+![](sepkseck.png){: w="400px"}
+
+![](sepkvmm.png){: w="400px"}

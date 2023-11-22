@@ -1,5 +1,5 @@
 ---
-title: Amusing Ourselves to Death by Neil Postman
+title: Media Ecology | Amusing Ourselves to Death by Neil Postman
 categories: [literature]
 tags: [life, reading, book excerpt]
 ---

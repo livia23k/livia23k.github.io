@@ -1,5 +1,5 @@
 ---
-title: Siddhartha by Hermann Hesse
+title: Novel | Siddhartha by Hermann Hesse
 categories: [literature]
 tags: [life, reading, book excerpt, book brief]
 ---

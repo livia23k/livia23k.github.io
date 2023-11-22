@@ -1,5 +1,5 @@
 ---
-title: Crime and Punishment by Fyodor Dostoevsky
+title: Novel | Crime and Punishment by Fyodor Dostoevsky
 categories: [literature]
 tags: [life, reading, book excerpt]
 ---
