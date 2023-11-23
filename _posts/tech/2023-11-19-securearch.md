@@ -6,9 +6,9 @@ math: True
 img_path: /assets/img/post/2023-11-19-cryptoarch/
 ---
 
-## Architecture for Software System
+## 1. Architecture for Software System
 
-### Benefits
+### 1.1 Benefits
 
 - simplifies Threat and Attack analysis 
 - allows High Assurance
@@ -16,9 +16,9 @@ img_path: /assets/img/post/2023-11-19-cryptoarch/
 - limits effects of successful Adversary Attacks 
 - facilitates Trusted Recovery from failures
 
-### Security Policies
+### 1.2 Security Policies
 
-#### Security Boundary (Trusted Computing Bases, TCB)
+#### 1.2.1 Security Boundary (Trusted Computing Bases, TCB)
 
 ##### Strategies
 
@@ -76,7 +76,7 @@ Security checks needed for penetration resistance:
 3. ...
 
 
-#### Access Control Policy
+#### 1.2.2 Access Control Policy
 
 ##### Utility
 
@@ -91,8 +91,16 @@ Security checks needed for penetration resistance:
 * Access Control is “separable” from Kernel/TCB Penetration Resistance.
 > change one of each does no need to change the other.
 
+##### DAC
 
-#### Audit (Control Policy)
+[saving space]
+
+##### MAC
+
+[saving space]
+
+
+#### 1.2.3 Audit (Control Policy)
 
 ##### Utility
 
@@ -117,7 +125,7 @@ Security checks needed for penetration resistance:
 > change one of each does no need to change the other.
 
 
-#### (User) Authentication
+#### 1.2.4 (User) Authentication
 
 ##### Utility
 
@@ -129,17 +137,17 @@ Avoid User Impersonation
 * Authentication is “separable” from Kernel/TCB Penetration Resistance.
 > change one of each does no need to change the other.
 
-#### Relationships
+#### 1.2.5 Relationships
 
 ![](depend.png){: w="600"}
 
-### Native Operating System
+### 1.3 Native Operating System
 
-#### Structure Overview
+#### 1.3.1 Structure Overview
 
 ![](native.png){: w="600"}
 
-#### (Native) Security Kernel
+#### 1.3.2 (Native) Security Kernel
 
 ##### Property
 
@@ -168,7 +176,7 @@ login, audit, SSA
 VM Segments, Processes & Inter-Process Communication (IPC), Basic I/O
 
 
-#### (Native) Microkernels
+#### 1.3.3 (Native) Microkernels
 
 ##### Structure
 
@@ -189,30 +197,30 @@ Address Spaces, Treads, Inter-Process Communication (IPC)
 Untyped Objects, static kernel memory
 
 
-### Virtualization
+### 1.4 Virtualization
 
-#### Structure Overview
+#### 1.4.1 Structure Overview
 
 ![](virtual.png){: w="600px"}
 
-#### Benefit
+#### 1.4.2 Benefit
 
 Has very small attack boundaries.
 
-#### History & Now
+#### 1.4.3 History & Now
 
 ![](virtualcmp.png){: w="800px"}
 
 
-## Architecture for Application Isolation
+## 2. Architecture for Application Isolation
 
-### Separation Kernel
+### 2.1 Separation Kernel
 
-#### Fined Structure
+#### 2.1.1 Fined Structure
 
 ![](virtual2.png){: w="600px"}
 
-#### Hardware Abstraction
+#### 2.1.2 Hardware Abstraction
 
 **Illustration**
 
@@ -263,7 +271,7 @@ Properties:
 - Authentic
 > only source could write port
 
-#### Other Separation Abstraction
+#### 2.1.3 Other Separation Abstraction
 
 - Physical
 > implemented with physically separate resources and command lines
@@ -278,7 +286,7 @@ Properties:
 > 
 > requires closure of all programs in a system
 
-#### Partitioning Communication System
+#### 2.1.4 Partitioning Communication System
 
 ![](partsys.png){: w="450px"}
 
@@ -295,7 +303,7 @@ Crypto Separation:
 > 
 > Adding header and encrypt the plaintext (red) to a ciphertext (black). Then could transfer it to black partition.
 
-#### Application
+#### 2.1.5 Application
 
 Applicable:
 
@@ -321,9 +329,9 @@ Not applicable:
 1. Commodity workstations
 > complex, out-of-date assurance
 
-### Security Kernel
+### 2.2 Security Kernel
 
-#### Properties
+#### 2.2.1 Properties
 
 1. Isolated
 > have only several entry points where kernel could transfer control only to the caller
@@ -340,8 +348,160 @@ Not applicable:
 3. Small enough to be verifiable
 > does not contain large systems like file system and dir. system
 
-### Separation Kernels vs. Security Kernels vs. VM Monitors
+### 2.3 Separation Kernels vs. Security Kernels vs. VM Monitors
 
 ![](sepkseck.png){: w="400px"}
 
 ![](sepkvmm.png){: w="400px"}
+
+
+## 3. Security Primitives
+
+### 3.1 Root of Trust Management
+
+#### 3.1.1 Concepts
+
+**Root of Trust**
+
+A source that can always be trusted within a cryptographic system.
+
+**Secure Boot**
+
+$$Sign_{K_{priv}}(sw_1, sw_2, ... , s)$$
+
+Boot using only trusted software needed for booting (not checking any other firmwares …), check all signatures of these software, if all valid, then firmware gives control to os.
+
+Ensure the system boot with all trusted software.
+
+> reference: https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot
+
+**Trusted Boot**
+
+When the system first booted, log the trusted software info on a "hash table", later verify the integrity of all components of the boot sequence depending on the "hash table".
+
+Ensure the trusted softwares are not modified.
+
+Possible for boot-then-verify.
+
+**Sealed Storage (AE with AD)**
+
+> AE means Authenticated Encryption
+> 
+> AD means Associated Data
+>
+> My understanding is: the storage is sealed, not modifiable. Every time we use the trusted boot to verify the data, the result is dependable because of the sealed storage.
+
+**Remote Attestation**
+
+> Verify the integrity and authenticity of a software system remotely.
+> 
+> Because the random nonce is used, it can ensure that the attestation is fresh and specific to the current session.
+
+#### 3.1.2 SRTM vsv DRTM
+
+##### SRTM Shortcomings
+
+- Coarse-grained, measures entire system 
+
+    – requires hundreds of integrity measurements just to boot
+
+    – every host is different 
+    > firmware versions, drivers, patches, apps, spyware, …
+
+    – what does a PCR mean in this context? 
+    > PCR - Platform Configuration Register
+    >
+    > used in Trusted Platform Module (TPM), which is the "hash table" mentioned before (at 3.1.1 Trusted Boot)
+    >
+    > act as another wrapper of hash of origin TPM items, then store it back to TPM
+
+    – TCB includes entire system! 
+
+- Integrity measurements are done at load-time not at run-time 
+
+    – Time-of-check-time-of-use (TOCTOU) problem 
+
+    – Cannot detect any dynamic attacks! 
+
+    – No guarantee of execution
+
+##### SRTM Example
+
+![](srtmeg.png){: w="600px"}
+
+> Explaination of each abbrevation:
+> 
+> BIOS: Basic Input/Output System, the program a personal computer's microprocessor uses to get the computer system started after you turn it on.
+> 
+> ROT: Root of Trust, a set of functions in the trusted computing module that is always trusted by the computer's operating system (OS).
+>
+> CRTM: Core Root of Trust for Measurement, the first piece of code to execute when a computer starts, and it measures the BIOS.
+>
+> POST: Power-On Self-Test, a process performed by firmware or software routines immediately after a computer or other digital electronic device is powered on.
+>
+> TPM: Trusted Platform Module, a specialized chip on an endpoint device that stores RSA encryption keys specific to the host system for hardware authentication.
+> 
+> PCR: Platform Configuration Register, used in TPM for storing the measurements (hashes) that allow a system to check if a system has been tampered with.
+> 
+> GRUB Stage1 (MBR): Grand Unified Bootloader, a package that allows a user to select from multiple operating systems every time the computer starts up. Stage1 or MBR refers to the Master Boot Record, the first stage of the GRUB bootloader.
+> 
+> GRUB Stage1.5: An intermediate stage in some GRUB installations that bridges the gap between the MBR and the main GRUB bootloader.
+>
+> GRUB Stage2: The main stage of the GRUB bootloader, where the menu and the larger part of the bootloader's functionality reside.
+>
+> Operating System: The software that, after being initially loaded into the computer by a boot program, manages all the other programs in a computer.
+> 
+> /usr/sbin/httpd: The location of the HTTP daemon in Unix-based systems, which is the program that acts as the web server.
+> 
+> /bin/ls: A common directory path in Unix-based systems that contains the 'ls' command, which lists directory contents.
+> 
+> Linux Kernel: The core of the Linux operating system, which manages the machine's hardware and provides services to the user-space applications.
+
+
+##### Dynamic Root of Trust Management
+
+- Security properties similar to reboot 
+    
+    – without a reboot! 
+    
+    – late launch of a measured block of code 
+    
+    – removes many components from TCB 
+    > BIOS, boot loader, DMA-enabled devices, …
+    >
+    > long-running OS and Apps, if done right 
+    
+- Integrity of loaded code (only) can be attested 
+
+- Untrusted legacy OS can coexist with trusted software 
+
+- Allows introduction of new, higher-assurance software without breaking existing systems
+
+##### DRTM Example
+
+- SKINIT instruction in AMD CPU 
+    – Late launches a Secure Loader Block (SLB) 
+
+- SKINIT executes atomically 
+
+    – Sets CPU state similar to INIT (soft reset) 
+    
+    – Disables interrupts 
+    
+    – Enables DMA protection for entire 64 KB SLB 
+    
+    – Record the hash of SLB in TPM 
+    
+    – Begins executing SLB 
+    
+- Remote Attestation: Verifier receives attestation after SKINIT 
+
+    – Knows SKINIT was used (hash chain 00… vs ff…) 
+    
+    – Knows software TCB includes only the SLB 
+    
+    – Knows exactly what SLB was executed
+
+> SKINIT is used to launch Secure Loader Block, which is used to initiate a secure and trusted environment for critical software to run, like the environment for DRTM.
+> 
+> It executes atomically, ensuring the integrity of the security process it initiated.
