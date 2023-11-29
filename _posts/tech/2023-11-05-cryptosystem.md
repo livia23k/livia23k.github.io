@@ -151,7 +151,7 @@ How to generate a secure $e$-$d$ pair?
 
 ![](rsaende.png){: w="600"}
 
-> $e, d$ is picked satisfying $e * d = 1 \;mod \;𝝋(n)$. And the following proof is done utilizing the second formula in Generalization of Euler’s Theorem.
+> $e, d$ is picked satisfying $e * d = 1 \;mod \;𝝋(n)$. And $gcd(e, 𝝋(n)) = 1 = e * d + 𝝋(n) * k$, so e * d$$
 
 #### Application: Signature
 
@@ -159,7 +159,7 @@ How to generate a secure $e$-$d$ pair?
 
 ### 1.3 Hardness Conjecture
 
-When $p$ and $q$ is too large, it is computationally hard to find prime factorization $n$.
+When n is too large, it is computationally hard to find prime factorization $p$ and $q$.
 
 ![](rsahard.png){: w="400"}
 
@@ -187,9 +187,9 @@ For adversary, knowing $𝝋(n)$ equals to factoring. If the adversary could fin
 
     - When encrypting a short plaintext with a small public key, the N might not reduce the result. And it is possible to compute the result by brute force.
 
-    - Given ciphertext $C$ (with a length $x$), compute a $C/x^e \; mod \; n$ and a $y^e \; mod \; n$, where $x$ and $y$ is in $(0, 2^{x/2})$. Then if $C/x^e \; mod \; n = y^e \; mod \; n$, $C = (x * y)^e$ and origin message $M = x * y$.
+    - Given ciphertext $C$ (with a small length $L$), compute a $C/x^e \; mod \; n$ and a $y^e \; mod \; n$, where $x$ and $y$ is in $(0, 2^{L/2})$. Then if $C/x^e \; mod \; n = y^e \; mod \; n$, $C = (x * y)^e$ and origin message $M = x * y$.
 
-    > It works when M has two facors each $ < 2^{x/2}$. (So it might be the reason why we need to choose co-prime pairs lol.) It is more easy for adversary to find $\sqrt{M}$ than $M$.
+    > It works when M has two facors each $ < 2^{L/2}$. (So it might be the reason why we need to choose co-prime pairs lol.) It is more easy for adversary to find $\sqrt{M}$ than $M$.
 
 2. Common-Modulus Attacks
 
@@ -209,7 +209,7 @@ For adversary, knowing $𝝋(n)$ equals to factoring. If the adversary could fin
 
     - **Attack2**
 
-        keywords: adversary got common message encrypted with co-prime encryption keys; Euclid's algo
+        keywords: adversary got common message encrypted with co-prime encryption keys; Extended Euclid's algo
     
     ![](rsacma2.png){: w="400"}
 
@@ -221,7 +221,7 @@ For adversary, knowing $𝝋(n)$ equals to factoring. If the adversary could fin
     
     $$m' * r^{-1} = (c')^d * r ^{-1} = (r^e * m^e)^d * r^{-1} = r^{ed} * m^{ed} * r^{-1} = r * m * r^{-1} = m \;mod \;n$$
 
-    > if set $r$ = 2, then $m' = 2m$
+    > if set $r$ = 2, then $m' = 2m$, (small is good to prevent overflow)
 
 4. Attacks Against Textbook RSA Signatures
 
@@ -229,9 +229,7 @@ For adversary, knowing $𝝋(n)$ equals to factoring. If the adversary could fin
 
         ![](rsasigattack1.png){: w="400"}
 
-        > I don't understand the usage of this attack :( [To be discussed]
-        > 
-        > One explaination: it's just for adversary to gain a valid signature, if the signature's content is not verified by RSA system. Then he could exploit some resources using the signature.
+        > Randomly choose $\sigma$ and make $\sigma^e = m$ succeed.
 
     - Attack2: Forging a signature existed by arbitrary message
 
@@ -244,16 +242,29 @@ For adversary, knowing $𝝋(n)$ equals to factoring. If the adversary could fin
 
         ![](rsasigattack3.png){: w="400"}
 
-        > When given messages and their signatures, adversary could compute the corresponding signatures on forged messages.
+        > When given signatures, the adversary could forge the signature into another one that could be esier to forge.
 
     > Textbook RSA is homomorphic under modular multiplication, which means given $Enc_K(x)$ and $Enc_K(y)$, we could obtain $Enc_K(x \; op \; y)$ for some oprations "op". The adversary could also exploit this vulneralbility.
     {: .prompt-danger }
 
 ### 1.5 Modes of Encyption for RSA
 
-[saving space]
-
 > Protect RSA from attacks.
+
+**RSA PKCS #1 & #2**
+
+[Skipped]
+
+> set some verification bits.
+
+**Hash RSA**
+
+Generation: $\sigma = [H(m)]^d \; mod \; N$, where H() is a collision-resistant compressing function.
+
+Verification: $\sigma^e = H(m) \; mod \; N$
+
+Can counter the previous mentioned attacks (no message attack, ... ), because H() is not revertible.
+
 
 <div style="height: 20px;"></div>
 

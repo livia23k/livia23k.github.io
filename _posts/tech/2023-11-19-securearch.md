@@ -145,7 +145,7 @@ Avoid User Impersonation
 
 #### 1.3.1 Structure Overview
 
-![](native.png){: w="600"}
+![](./native.png){: w="600"}
 
 #### 1.3.2 (Native) Security Kernel
 
@@ -211,7 +211,6 @@ Has very small attack boundaries.
 
 ![](virtualcmp.png){: w="800px"}
 
-
 ## 2. Architecture for Application Isolation
 
 ### 2.1 Separation Kernel
@@ -259,7 +258,7 @@ Exist between two partitions
 
 - Destination
 > arrow identifying the partition whose state is extended
-    
+
 Properties:
 
 - Unidirectional
@@ -318,7 +317,7 @@ Applicable:
 
     need four partitions
     > red, header, encryption, black
-
+    
     need four channels for communication 
     > red-> header, red -> encryption, header -> black and encryption -> black
     
@@ -461,7 +460,7 @@ Possible for boot-then-verify.
 ##### Dynamic Root of Trust Management
 
 - Security properties similar to reboot 
-    
+  
     – without a reboot! 
     
     – late launch of a measured block of code 
