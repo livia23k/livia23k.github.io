@@ -9,16 +9,16 @@ img_path: /assets/img/post/2023-12-2-749review/
 
 ### 1.1 ACID
 
-- **A**tomicity
+- **Atomicity**
 > Either the operation is performed by all of the replicas or by none of them
 
-- **C**onsistency (=> Data Consistency)
+- **Consistency** (=> Data Consistency)
 > After each operation, all replicas reach the same state and send out the same output message (if needed)
 
-- **I**solation
+- **Isolation**
 >  No operation can see the data from another operation 
 
-- **D**urability
+- **Durability**
 >  Once an operation completes across all replicas, its changes to data should survive crashes of replicas
 
 **Pros (theory)** 
@@ -47,7 +47,7 @@ img_path: /assets/img/post/2023-12-2-749review/
 
 ### 1.2 BASE
 
-- Basically Available
+- **Basically Available**
 > Tolerate partial system failures (if occurs, simply reboot these failed replicas)
 > 
 > High perceived responsiveness
@@ -55,14 +55,14 @@ img_path: /assets/img/post/2023-12-2-749review/
 > Fast response
 
 
-- Soft-state (or scalable)
+- **Soft-state** (or scalable)
 > Keep first-tier system not stroing any permanent data (if needed, keep it in ACID service elsewhere, or keep enough copies to make the potential partial failures doesn't impact it)
 > 
 > If first-tier replicas dies, simply restart them from predetermined clean state
 > 
 > Use events to publish to every replica when state becomes consistent if needed
 
-- Eventually Consistent
+- **Eventually Consistent**
 > Use cached data to provide responses quickly, if possible
 >
 > No need to always check for stale or inconsistent data
@@ -73,9 +73,9 @@ img_path: /assets/img/post/2023-12-2-749review/
 
 ### 1.3 CAP
 
-Consistency, Availability, Tolerance (to network partitions)
+**Consistency**, **Availability**, Tolerance to Network **Partition**
 
-> Network Partitioning: Network will partition distributed systems into disconnected commponents. Only objects at the same partition could talk to each other.
+> Network Partition (split-brain): A fault where the network splits into multiple disconnected portions, and where processors and processes in different partitions cannot communicate with each other.
 
 > Consistency: All clients see the same view of a data object, even as reads and writes happen to data objects
 >
@@ -101,6 +101,10 @@ Trade-offs:
 > Systems where failed replicas are allowed to exist without possible hope of recovery
 > 
 > E.g. Distributed databases, majority-voting protocols
+>
+> Question: If a network-partitioning fault creates 5 partitions, and we choose CP in the CAP theorem, how many partitions are running after the fault?
+> 
+> Answer: 1. 
 
 - prefer AP
 > You can get a response, but it might not be the right response
@@ -108,6 +112,10 @@ Trade-offs:
 > Systems where you might need to have leases on objects and expire them
 > 
 > E.g. DNS, Web caches
+>
+> Question:  If a network-partitioning fault creates 5 partitions, and we choose AP in the CAP theorem, how many partitions are running after the fault?  
+> 
+> Answer: 5.
 
 ### 1.4 PACELC
 
@@ -117,10 +125,13 @@ Under a **network partition** (P) in a distributed computer system, trade-off **
 >
 > When high availability is wanted, we must have replications, then need to worry about latency to keep replicas consistent
 
-
 ## 2. Misc Concepts
 
-### 2.1 Fault -> Error -> Failure 
+### Availability
+
+Availability = Uptime / (Uptime + Downtime)
+
+### Fault -> Error -> Failure 
 
 > Fault: Hypothesized case of error; have 2 states: dormant or active (when it produces an error)
 >
@@ -130,41 +141,108 @@ Under a **network partition** (P) in a distributed computer system, trade-off **
 
 Failure are always not independent.
 
-### 2.2 Synchronous and Asynchronous System
+### Fault Types
 
-> Synchronous system using the same clock, which provide ordering ways, synchronization evaluation, faulty detection, and so on.
+a. Fail-silent Fault (Fail-stop Fault)
+
+- The fault occurs in a single machine or component within the distributed system.
+
+- The faulty machine stops working and does not produce any outputs, erroneous or otherwise.
+
+- The fault does not cause other machines in the system to fail or behave incorrectly.
+
+b. Latent Fault
+
+will not manifest into an error
+
+### Consensus
+
+Agreement reached by a set of processes, objects or processors about the state of the system.
+
+### FLP (Fischer-Lynch-Patterson) Theorem 
+
+Consensus is impossible in the face of a fault.
+
+### Classical Impossibility Theorem
+
+It is impossible to detect if a server is slow or whether it has failed.
+
+Applies only to distributed asynchronous systems.
+
+### Heartbeat 
+
+A pinging-style mechanism by which a process, processor or an object is detected to be alive and functional.
+
+### Idempotent operation
+
+When doing an operation (e.g., processing an incoming request) repeatedly does not change the state of a replica.
+
+### Independent-failures assumption
+
+The assumption under which replication works, i.e., that replicas fail independently of each other.
+
+### Boardcast & Multicast
+
+Boardcast: send same message at the same time to all machines in the same network
+
+Multicast: send same message at the same time to designated machines in the same network
+
+### Quiescence
+
+A condition where a replica pauses, stops updating its state, stops processing any incoming application requests, and instead is involved in checkpointing.
+
+### Synchronous and Asynchronous System
+
+> Synchronous system using the same clock, which provide ordering ways, synchronization evaluation, faulty detection, and so on. (fault detection using the global clock)
 > 
-> Asynchronous system machines have their own clocks. They do their job at their own pace. Messages are not required to arrive or handled at the exactly same time but with a flexible time bound.
+> Asynchronous system machines have their own clocks. They do their job at their own pace. Messages are not required to arrive or handled at the exactly same time but with a flexible time bound. (fault detection using heartbeats and timesouts)
 
-### 2.3 How to achieve dependability?
+### Virtual synchrony
+
+Achieving logical “points” of consensus across different processors in an asynchronous distributed system, so that processors appear to see the same thing at the same “logical” time, despite the processors running on different clocks and working at different speeds with no global clock.
+
+### Strategies used after fault is healed
+
+BASE: Fulfillment operations, or compensating transactions. 
+
+preference of AP in CAP theorem: Fulfillment operations, or compensating transactions.
+
+preference of CP in CAP theorem: Restart killed partitions. 
+
+preference of CA in CAP theorem: None. It’s not partition-tolerant to begin with. 
+
+### How to achieve dependability?
 
 1. Fault prevention
 > Good design of system
 
-2. Fault tolerance
+2. Fault detection
+> E.g. heartbeat
+
+3. Fault tolerance
 > Error detection, recovery, logging, checkpointing
 
-3. Fault containment or removal
+4. Fault containment or removal
 > Corrective & preventive maintenance
 
-4. Fault diagnosis
+5. Fault diagnosis
 > Monitoring, root-cause analysis
 
-5. Fault forecasting
+6. Fault forecasting
 > Simulation, modeling, prediction from process metrics (data from models)
 > 
 > Historical data, accelerated life testing, etc. (data from real systems)
 
-### 2.4 Shades of Consistency
+### Shades of Consistency
 
-#### 2.4.1 Strict consistency
+#### a. Strict consistency
 > State updates propagated instantaneously
 > 
 > Unrealistic, impractical
 > 
 > Not very scalable, blocking, quiescence, consensus, total order, no propagation delay, no latencies needed
 
-#### 2.4.2 Linearizable consistency
+#### b. Linearizable consistency
 > State updates appear to occur instantaneously at some point in time (using a global clock)
 >
 > Used for the formal verification of concurrent programs, real-time systems
@@ -173,7 +251,7 @@ Failure are always not independent.
 > 
 >  No blocking, no quiescence, no consensus requirements
 
-#### 2.4.3 Sequential consistency
+#### c. Sequential consistency
 > State updates occur in the same (total) order everywhere (without a global clock)
 > 
 > Order of state updates from the same client is preserved 
@@ -184,12 +262,22 @@ Failure are always not independent.
 >
 > Used in ACID virtual synchrony model
 
-#### 2.4.4 Eventually consistency
+#### d. Eventually consistency
 > Under quiescence (when all state stops updating), eventually, all replicas will converge to the identical state
 >
 > Scalable — no blocking, no quiescence (except for event-publish), no ordering requirement
 >
 > Used in BASE model
+
+### Determinism
+
+The property of a process, processor or object, whereby the processing of the same message on a state variable produces reproducible, identical results. 
+
+A deterministic server means that its replicas produce the same set of responses and undergo the same state changes, when they are sent the same set of requests in the same order.
+
+### Nondeterminism examples
+
+Multithreading, local timers, getimeofday(), local host-specific functions, local memory, local files — only if they affect server state or the reply from a server. 
 
 
 ## 3. Building Reliable DS Strategies
@@ -221,16 +309,23 @@ agree on a common value
 
 5. Checkpointing
 > Have a way of giving newborn replicas the correct state
+>
+> Need quiescence to avoid inconsistency
 
 6. Duplicate detection
 >  Have a way of ensuring replicas do not perform duplicate 
 operations multiple times
+>
+> Needed in all servers. (needed for active server to detect duplicate client messages; needed for passive servers to detect duplicate checkpoint messages)
 
-7. Deterministic behavior
-> All replicas behave identically in state and in output 
-when presented with the same inputs
+7. Logging
+> Needed in quiescence, and in all servers.
+
+
 
 ##### Properties
+
+0. Consensus needed
 
 1. Never lose data
 
@@ -250,16 +345,40 @@ when presented with the same inputs
 
     - Consistency under ongoing operations, replicas crashing,replicas recovering, checkpoints occurring, etc. 
 
-
 4. Typical system model
 
     - Fault model: **Crash-fault model** with **fail-silent faults**
 
     - System model: Distributed **asynchronous** system (no global clock)
 
-##### Active Replication
+##### Active Replication (a.k.a. State-machine Replication)
 
 All servers are active, receiving and processing all messages.
+
+- Active replication mandates determinism.
+
+- Improve recovery time by keeping small size of checkpoints. (less computing resources needed)
+
+**Components**:
+
+Checkpointing (to recover new replicas), 
+
+total order of messages, 
+
+logging (needed during replica recovery, during the checkpoint), 
+
+quiescence (don't want the replicas updating their states in the middle of taking a checkpoint), 
+
+duplicate detection and suppression, 
+
+fault detection (to detect failed replicas)
+
+**Pros & Cons**
+
+Better in: recovery time, fault masking
+
+Wrose in: resource usage 
+
 
 ##### Passive Replication
 
@@ -267,6 +386,37 @@ Only one server is active (named primary), receiving and processing all messages
 
 Other servers (named backup) are passive, receiving state updates from primary.
 
+- Passive replication could be nondeterminism in some cases. (override the backup replicas’ states via checkpoints)
+
+- Improve recovery time by increasing checkpointing frequency.
+
+> Logs record the total ordering, duplicate detection, checkpointing, quiescence, and membership changing, but not fault detection because it is done by heartbeating which is independent to the system normal operating. 
+
+> Adopted by Amazon EC2 EBS clusters. (with a single points of failure of control plane)
+
+**Components**:
+
+Periodic checkpointing, 
+
+total order of messages, 
+
+logging, 
+
+quiescence (needed during taking checkpoints from primary to backups), 
+
+duplicate detection and suppression, 
+
+fault detection
+
+**cold passive replication**
+
+The backup server (replica) is not actively running the application or keeping its state updated in real-time with the primary server.
+
+Better in: saving computational resources
+
+**warm passive replication**
+
+The backup server is running and possibly receiving updates of the system state from the primary server frequently.
 
 #### 3.2.2 Recovery
 
@@ -280,6 +430,8 @@ Return system to its state before the error occurred.
 > Atomic commit needed (E.g. in Database)
 >
 > Undo partial results to restore to clean system state.
+>
+> Duplicate detection no needed.
 
 ##### Roll-forward
 
@@ -290,9 +442,13 @@ Move the system forward into an error-free state.
 > Proceed on and let error flush itself out of system.
 >
 > Replication where a backup takes over after the working replica fails.
+>
+> Duplicate detection needed. (because the non duplicate message is still needed to be proecessed, but at a future normal state, we will make a checkpoint of that state and forward it to other replicas)
 
 
 ### 3.3 Upgrading
+
+>  Consistent replication is not the goal because the old and new replica are dissimilar pieces of software. Rather, continuity of operation (availability) is the goal.
 
 #### 3.3.1 Big Bang
 
@@ -317,7 +473,7 @@ upgrade is done at once, across the entire system
 **further questions:**
 
 - How would we use replication for this?
-> Maintaining copies of data across different servers or nodes to ensure redundancy and fault tolerance.
+> Replication is not needed/used in this type of upgrade. 
 
 - Almost like cold passive replication, but without checkpoints 
 > "Passive replication" involves a primary server that handles all requests and updates the replicas only after processing. 
@@ -327,10 +483,10 @@ upgrade is done at once, across the entire system
 > The mention of "without checkpoints" suggests that during the Big Bang upgrade, the state of the system is not periodically saved, which could be risky.
 
 - What’s the downside? 
-> Risk of total system failure if something wrong happens during upgrading. 
+> Long downtime
 
 - What about consistency?
-> Consistency is a challenge during a Big Bang upgrade because all replicas must be updated at once.
+> The servers will start consistently.
 
 - What about availability?
 > Availability could be compromised during a Big Bang upgrade because the system might need to be taken offline entirely.
@@ -355,7 +511,8 @@ upgrade is done at once, across the entire system
 **further questions:**
 
 - How would we use replication for this?
-> In this context, replication would involve updating replicas in a staggered fashion, rather than all at once.
+> Replication is used in a piecewise way, to ensure no downtime for 
+the component being upgraded. 
 
 - Almost like warm passive replication with different states and checkpoints 
 > components replacement quicker than big bang, and safer with checkpoints
@@ -367,7 +524,7 @@ upgrade is done at once, across the entire system
 > checkpoints are purposefully different, providing flexibility in handling various issues
 
 - What’s the downside?
-> increasing complexity in managing multiple versions of the system simultaneously
+> It may not be feasible in systems where one cannot isolate the component to be upgraded. 
 
 - What about consistency?
 > Maintaining consistency across the system is a challenge with incremental replacement. As different nodes may be at different upgrade stages, ensuring that they all behave as if they were the same version can be complex.
@@ -397,7 +554,7 @@ upgrade is done at once, across the entire system
 **further questions:**
 
 - How would we use replication for this?
-> Replication here would likely involve creating shadow replicas that run in parallel to the live system to test new changes or upgrades.
+> You need to replicate every component of the system. Essentially, there are two full systems running in parallel.   
 
 - Almost like active replication with different synchronization 
 > Each replica processes requests and maintains its own state. 
@@ -458,7 +615,9 @@ Often used in a way that is decoupled from the main business logic.
 
 Collect Data -> Identify Normal -> Detect Deviationsa (From Normal) -> Diagnose Root-cause -> Attempt Recovery
 
-#### 3.4.1 Black-box telemetry
+#### 3.4.0 Black-box telemetry
+
+> Black-box metrics: OS metrics (CPU utilization, memory usage and ops/sec, disk usage and ops/sec, swap usage and ops/sec, network usage e.g., packets/sec and bytes/sec)
 
 - Available on every kind of system
 
@@ -466,19 +625,38 @@ Collect Data -> Identify Normal -> Detect Deviationsa (From Normal) -> Diagnose 
 
 - Coarse-grained: Difficult to diagnose
 
-> Black-box metrics: OS metrics (CPU utilization, memory usage and ops/sec, disk usage and ops/sec, swap usage and ops/sec, network usage e.g., packets/sec and bytes/sec)
+- Non-invasive on the application
+
+
+#### 3.4.1 Gray-box telemetry
+
+> E.g. Middleware metrics, thread-pool size, number of threads used.
+
+- has no knowledge of the application
+
+- cannot discern problems that are traceable to application-specific behavior
+
+- cannot trace application behavior outside of its machine
+
+> It is still important because it catches issues that might be in middleware, for example, issues with the Java garbage-collector, with the number of threads, with the number of sockets, etc.  
 
 #### 3.4.2 White-box telemetry
 
-- Instrument components to emit messages
+Instrument components to emit messages 
+
+> E.g. Server/Application and System logs
 
 - Application-specific, not portable, high overheads
 
 - Fine-grained: Highly informative
 
-> Server/Application and System logs
+- invasive to the application
+
+- does not scale easily as it is specific to each application
 
 #### 3.4.3 How to define Normal
+
+By gathering data to derive signatures of the system behavior under different kinds of workloads, under fault-free conditions. 
 
 - Service Level Objective (SLO)
 > Typically provided by client or dictated by business requirements
