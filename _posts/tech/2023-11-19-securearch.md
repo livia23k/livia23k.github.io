@@ -102,6 +102,10 @@ Security checks needed for penetration resistance:
 
 #### 1.2.3 Audit (Control Policy)
 
+> implementation: set audit bits for kernel calls, log the record 
+> 
+> could only access by special users E.g. defined by special roles, SoD
+
 ##### Utility
 
 1. Avoid circumvention of Policy by Authorized/Trusted Users

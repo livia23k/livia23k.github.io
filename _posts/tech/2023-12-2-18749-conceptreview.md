@@ -26,11 +26,13 @@ img_path: /assets/img/post/2023-12-2-749review/
 - Strong consistency at all times
 
 - Replicas are exactly substitutable for each other (exact redundancy)
+
 - No data is lost, no operation is lost
 
 - Rigorous consensus protocols to provide guarantees
 
 - Works in any distributed system, even without a global clock
+
 - Pessimistic: Accounts for the worst-case situation
 
 **Cons (practicality)**
@@ -193,7 +195,7 @@ A condition where a replica pauses, stops updating its state, stops processing a
 
 ### Synchronous and Asynchronous System
 
-> Synchronous system using the same clock, which provide ordering ways, synchronization evaluation, faulty detection, and so on. (fault detection using the global clock)
+> Synchronous system using the same clock (the global clock), which provide ordering ways, synchronization evaluation, faulty detection, and so on. (fault detection using the global clock)
 > 
 > Asynchronous system machines have their own clocks. They do their job at their own pace. Messages are not required to arrive or handled at the exactly same time but with a flexible time bound. (fault detection using heartbeats and timesouts)
 
