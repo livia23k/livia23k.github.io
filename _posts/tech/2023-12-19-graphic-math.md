@@ -181,5 +181,5 @@ A linear system with fewer equations than unknowns is underdetermined, meaning t
 
 ## Acknowledgement
 
-Materials from [15-462/662 Computer Graphics @ CMU](http://15462.courses.cs.cmu.edu/spring2023/home) (23 Spring).
+Materials from 15-462/662 Computer Graphics @ CMU (23 Spring) http://15462.courses.cs.cmu.edu/spring2023/home.
 
