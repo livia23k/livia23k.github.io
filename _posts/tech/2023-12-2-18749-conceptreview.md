@@ -1,6 +1,6 @@
 ---
 title: Reliable Distributed System | Concept Review
-categories: [computer science, distributed system]
+categories: [Computer Science, Distributed System]
 tags: [tech, distributed system, 23fall, 18-749, review]
 img_path: /assets/img/post/2023-12-2-749review/
 ---

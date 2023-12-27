@@ -1,6 +1,6 @@
 ---
 title: Introduction to Cloud Computer
-categories: [computer science, cloud]
+categories: [Computer Science, Cloud]
 img_path: ../../assets/img/post/2023-04-14-introcc
 tags: [tech, cloud]
 ---

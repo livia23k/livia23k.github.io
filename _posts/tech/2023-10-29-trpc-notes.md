@@ -1,6 +1,6 @@
 ---
 title: Web Dev | tRPC Notes
-categories: [computer science, web development]
+categories: [Computer Science, Web Development]
 tags: [tech, web dev, backend, learning note]
 ---
 

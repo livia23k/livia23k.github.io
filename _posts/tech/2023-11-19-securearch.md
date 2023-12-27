@@ -1,6 +1,6 @@
 ---
 title: Security | Security Architecture
-categories: [computer science, security]
+categories: [Computer Science, Computer Security]
 tags: [tech, computer security, 23fall, 18-730, review]
 math: True
 img_path: /assets/img/post/2023-11-19-cryptoarch/

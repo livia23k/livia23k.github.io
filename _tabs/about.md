@@ -46,7 +46,8 @@ Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electri
 <div class="align-container" style="color:DarkGray;">
     <span class="align-label"><b>Courses:</b></span>
     <div class="align-content">
-        <span>Foundations of Computer Systems (ongoing), Building Reliable Distributed System (ongoing), Introdction to Computer Security (ongoing);</span>
+        <span>(23Fall) Foundations of Computer Systems, Building Reliable Distributed System, Introdction to Computer Security ;</span>
+        <span>(24Spring) Computer Graphics, Distributed System / Parallel Computer Architecture and Programming (waitlist), How to Write Fast Code II (waitlist);</span>
     </div>
 </div>
 
@@ -57,8 +58,9 @@ Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electri
 <div class="align-container" style="color:DarkGray;">
     <span class="align-label"><b>Courses:</b></span>
     <div class="align-content">
-        <span>Data Structure and Algorithms, Principles of Computer Composition, Compile System, Operating System, Computer Networking, Database, Cloud and Distributed System;</span>
-        <span>Machine Learning, Computer Vision, Digital Image Processing, Intelligent Mobile Robot;</span>
+        <span>(Fundamental) Calculas, Linear Algebra, Probabilistic, Data Structure and Algorithms;</span>
+        <span>(System) Principles of Computer Composition, Compile System, Operating System, Computer Networking, Database, Cloud and Distributed System;</span>
+        <span>(AI) Machine Learning, Computer Vision, Digital Image Processing, Reinforcement Learning;</span>
     </div>
 </div>
 
