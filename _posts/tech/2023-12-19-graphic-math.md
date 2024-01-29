@@ -6,9 +6,11 @@ img_path: /assets/img/post/2023-12-19-662math/
 math: True
 ---
 
-## 1. Vector
+## Linear Algebra
 
-**Definition**
+### 1. Vector
+
+#### Definition
 
 Vector v written as **v** or $\vec{v}$.
 
@@ -16,20 +18,20 @@ For measuring direction and magnitude, commonly represented by a directed line s
 
 A vector from (0, 0, ... , 0) pointing to (v_1, v_2, ... , v_n) is written as $$\vec{v} := (v_1, v_2, ... , v_n)$$.
 
-**Properties**
+#### Properties
 
 ![](vectorp.png){: w="500px"}
 
-**Operation**
+#### Operation
 
 - $\vec{v} + \vec{u} = (v_1 + u_1, v_2 + u_2, ... , v_n + u_n)$
 
 - $\frac{1}{n} \vec{v} = (\frac{1}{n} v_1, \frac{1}{n} v_2, ... , \frac{1}{n} v_n)$
 
 
-## 2. Measurement for Vectors and Functions
+### 2. Measurement for Vectors and Functions
 
-### 2.1 Inner Product of Vectors
+#### 2.1 Inner Product of Vectors
 
 **Definition**
 
@@ -43,7 +45,7 @@ $$<\vec{v}, \vec{u}> := \sum\limits_{i=1}^n v_i u_i$$
 
 ![](ipp.png){: w="400px"}
 
-### 2.2 $L^2$ Inner Product of Functions
+#### 2.2 $L^2$ Inner Product of Functions
 
 **Definition**
 
@@ -52,7 +54,7 @@ L^2 inner product of function f and g is written as $\<\<f, g\>\> := \int_0^1 f(
 > For clarity we will use \<\< • \>\> for the inner product of a function, and \< • \> for the inner product of a vector in R^n.
 
 
-### 2.3 (Euclidean) Norm of Vectors
+#### 2.3 (Euclidean) Norm of Vectors
 
 **Definition**
 
@@ -67,7 +69,7 @@ $$|\vec{v}| := |(v_1, v_2, ... , v_n)| := \sqrt{\sum\limits_{i=1}^n v_i^2} := \s
 ![](normvp.png){: w="400px"}
 
 
-### 2.4 $L^2$ Norm of Functions
+#### 2.4 $L^2$ Norm of Functions
 
 **Definition**
 
@@ -76,9 +78,9 @@ L^2 norm of function f is written as $\|\|f\|\| := \sqrt{\int_0^1 f(x)^2 dx}$
 > For clarity we will use \|\| • \|\| for the norm of a function, and \| • \| for the norm of a vector in R^n.
 
 
-## 3. Linear Maps
+### 3. Linear Maps
 
-**Definition & Properties**
+#### Definition & Properties
 
 A linear map f maps vectors to vectors, and if for all vectors u,v and scalars a we have
 
@@ -92,19 +94,19 @@ $$f(a\vec{u}) = af(\vec{u})$$
 >
 > ![](lm0.png){: w="200px"}
 
-**Example: Application in Coordinate**
+#### Example: Application in Coordinate**
 
 ![](lmeg.png){: w="400px"}
 
 
-### Other Types of Transformation
+#### Other Types of Transformation
 
 ![](trans.jpg){: w="600px"}
 
 > from https://fzheng.me/2016/01/14/proj-transformation/
 
 
-#### * Affine Maps
+##### * Affine Maps
 
 ![](affine.png){: w="800px"}
 
@@ -112,9 +114,9 @@ $$f(a\vec{u}) = af(\vec{u})$$
 
 
 
-## 4. Span
+### 4. Basis and Span
 
-**Definition**
+#### Span
 
 The span is the set of all vectors that can be written as a linear combination of **u** and **v**, i.e., vectors of the form for any two numbers a, b.
 
@@ -123,13 +125,11 @@ $$span(u_1, ... , u_n) = \{ x \in V \| x = \sum\limits_{i=1}^n a_i u_i, a_1, ...
 > The image of any linear map is the span of some collection of vectors.
 
 
-## 5. Basis
-
-**Definition**
+#### Basis
 
 In particular, if we have exactly n vectors $e_1, ..., e_n$ such that $span(e_1, ..., e_n) = \mathbb{R}^n$, then we say these vectors are a basis for $\mathbb{R}^n$.
 
-### Special: Orthonormal Basis
+#### Special: Orthonormal Basis
 
 Basis vectors that are unit length and mutually orthogonal.
 
@@ -145,7 +145,7 @@ $$
 \right.
 $$
 
-### How to get Orthonormal Basis? - Gram-Schmidt Algo
+#### How to get Orthonormal Basis? - Gram-Schmidt Algo
 
 Problem description: Given a collection of basis vectors a1, … an, how do we find an orthonormal basis $e_1, ..., e_n$? 
 
@@ -164,9 +164,9 @@ Algo process:
 > where $u_n$ stands for the n-th orthonormal basis.
 
 
-## 6. Linear Systems
+### 5. Systems of Linear Equations
 
-**Definition**
+#### Definition
 
 Linear function: $f(x_1, ..., x_k) = b$
 
@@ -185,23 +185,32 @@ Solving a linear system means finding values for the variables $x_1, ..., x_k$ t
 A linear system with fewer equations than unknowns is underdetermined, meaning that there are many possible solutions.
 
 
-## 7. Matrices
+### 6. Matrices
 
 ![](matrix.png){: w="500px"}
 
-## 8. Vector Calculus
+## Vector Calculus
 
-### Dot Product
+### 1. Dot Product
 
 ![](dot.png){: w="600px"}
 
-### Cross Product
+### 2. Cross Product
 
 ![](cross.png){: w="600px"}
 
+### 3. Derivatives & Integration
+
+[Not included here]
+
+
+## Mindmap Summary
+
+<object data="{{ site.baseurl }}/assets/pdf/24spr-15662/graphicsmath.pdf" type="application/pdf" width="100%" height="1000px">
+</object>
+
+
 ## Acknowledgement
 
-Most materials from 15-462/662 Computer Graphics @ CMU (23 Spring) http://15462.courses.cs.cmu.edu/spring2023/home.
-
-See Assignment 0.0 for more information.
+Materials from 15-462/662 Computer Graphics @ CMU (23 Spring) http://15462.courses.cs.cmu.edu/spring2023/home.
 
