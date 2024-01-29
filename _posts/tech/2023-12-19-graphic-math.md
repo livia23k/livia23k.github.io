@@ -1,5 +1,5 @@
 ---
-title: Graphic | Related Math
+title: Graphics | Related Math
 categories: [Computer Science, Computer Graphics]
 tags: [tech, computer graphics, 23winter, 15-662]
 img_path: /assets/img/post/2023-12-19-662math/
@@ -96,9 +96,20 @@ $$f(a\vec{u}) = af(\vec{u})$$
 
 ![](lmeg.png){: w="400px"}
 
-**Opposite: Affine Maps**
 
-The map not a linear one. In Graphics, we will need to turn affine functions into linear ones via homogeneous coordinates.
+### Other Types of Transformation
+
+![](trans.jpg){: w="600px"}
+
+> from https://fzheng.me/2016/01/14/proj-transformation/
+
+
+#### * Affine Maps
+
+![](affine.png){: w="800px"}
+
+> In Graphics, we will need to turn affine functions into linear ones via homogeneous coordinates.
+
 
 
 ## 4. Span
@@ -118,7 +129,7 @@ $$span(u_1, ... , u_n) = \{ x \in V \| x = \sum\limits_{i=1}^n a_i u_i, a_1, ...
 
 In particular, if we have exactly n vectors $e_1, ..., e_n$ such that $span(e_1, ..., e_n) = \mathbb{R}^n$, then we say these vectors are a basis for $\mathbb{R}^n$.
 
-**Special: Orthonormal Basis**
+### Special: Orthonormal Basis
 
 Basis vectors that are unit length and mutually orthogonal.
 
@@ -134,7 +145,7 @@ $$
 \right.
 $$
 
-**How to get Orthonormal Basis? - Gram-Schmidt Algo**
+### How to get Orthonormal Basis? - Gram-Schmidt Algo
 
 Problem description: Given a collection of basis vectors a1, … an, how do we find an orthonormal basis $e_1, ..., e_n$? 
 
@@ -178,8 +189,19 @@ A linear system with fewer equations than unknowns is underdetermined, meaning t
 
 ![](matrix.png){: w="500px"}
 
+## 8. Vector Calculus
+
+### Dot Product
+
+![](dot.png){: w="600px"}
+
+### Cross Product
+
+![](cross.png){: w="600px"}
 
 ## Acknowledgement
 
-Materials from 15-462/662 Computer Graphics @ CMU (23 Spring) http://15462.courses.cs.cmu.edu/spring2023/home.
+Most materials from 15-462/662 Computer Graphics @ CMU (23 Spring) http://15462.courses.cs.cmu.edu/spring2023/home.
+
+See Assignment 0.0 for more information.
 

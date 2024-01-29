@@ -20,3 +20,6 @@ package-lock.json
 
 # Misc
 assets/js/dist
+
+# Not finished posts
+_posts/tech/2024-01-06-games104-rendering.md
