@@ -4,6 +4,7 @@ layout: post
 toc: true
 icon: fas fa-sailboat
 order: 100
+img_path: /assets/img/others/
 ---
 
 <div style="height: 1px;"></div>
@@ -54,21 +55,21 @@ Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electri
 
 **Myers-Briggs Type Indicator (MBTI)** &nbsp;&nbsp;&nbsp;&nbsp; <b style="color:green;">INFJ-T</b> &nbsp;&nbsp;&nbsp;&nbsp; [My Detailed Report](https://www.16personalities.com/profiles/9e449530db6cb)
 
-![](../assets/img/others/mbti.png){: w="800px"}
+![](mbti.png){: w="800px"}
 
 <div style="height: 50px;"></div>
 
 
 **Enneagram Type** &nbsp;&nbsp;&nbsp;&nbsp; <b style="color:green;">Type Six Wing Five</b> &nbsp;&nbsp;&nbsp;&nbsp; [Detailed Introduction](https://www.enneagraminstitute.com/type-6)
 
-![](../assets/img/others/enne.png){: w="800px"}
+![](enne.png){: w="800px"}
 
 <div style="height: 40px;"></div>
 
 
 **The Big Five** &nbsp;&nbsp;&nbsp;&nbsp; <b style="color:green;">Result as the table shown below</b> &nbsp;&nbsp;&nbsp;&nbsp; [My Detailed Report](https://bigfive-test.com/result/649db4e59de5fc00087594de)
 
-![](../assets/img/others/bigfive.png){: w="1000px"}
+![](bigfive.png){: w="1000px"}
 
 <!-- | Openness To Experience 	| 102/120 	| Agreeableness 	| 95/120 	| Conscientiousness    	| 89/120 	| Neuroticism        	| 57/120 	| Extraversion       	| 57/120 	|
 |------------------------	|---------	|---------------	|--------	|----------------------	|--------	|--------------------	|--------	|--------------------	|--------	|
