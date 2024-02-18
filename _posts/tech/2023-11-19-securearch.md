@@ -149,7 +149,7 @@ Avoid User Impersonation
 
 #### 1.3.1 Structure Overview
 
-![](./native.png){: w="600"}
+![](native.png){: w="600"}
 
 #### 1.3.2 (Native) Security Kernel
 
