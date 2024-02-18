@@ -1,11 +1,16 @@
 ---
 # the default layout is 'page'
+layout: post
+toc: true
 icon: fas fa-sailboat
 order: 100
 ---
 
+<div style="height: 1px;"></div>
 
-<div style="height: 40px;"></div>
+## Introduction
+
+<div style="height: 20px;"></div>
 
 Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electrical and Computer Engineering at Carnegie Mellon University and am passionate about becoming a computer engineer, with a specialization in graphics and game engine development. This site is built for recording my thoughts, covering both my study, career path and my life. Hope it could witness my growth.
 
@@ -24,7 +29,7 @@ Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electri
 
 <p style="text-align:left;margin-left: 30px;color:DarkGray;">(23Fall) Foundations of Computer Systems, Building Reliable Distributed System, Introdction to Computer Security;</p>
 
-<p style="text-align:left;margin-left: 30px;color:DarkGray;">(24Spring) Computer Graphics, Parallel Computer Architecture and Programming, How to Write Fast Code II, Introduction to Game Design;</p>
+<p style="text-align:left;margin-left: 30px;color:DarkGray;">(24Spring) Computer Graphics, How to Write Fast Code II, Introduction to Game Design; Parallel Computer Architecture and Programming (Partial);</p>
 
 <div style="height: 15px;"></div>
 
@@ -47,21 +52,21 @@ Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electri
 
 <div style="height: 20px;"></div>
 
-**Myers-Briggs Type Indicator (MBTI)** [INFJ-T](https://www.16personalities.com/profiles/9e449530db6cb)
+**Myers-Briggs Type Indicator (MBTI)** &nbsp;&nbsp;&nbsp;&nbsp; <b style="color:green;">INFJ-T</b> &nbsp;&nbsp;&nbsp;&nbsp; [My Detailed Report](https://www.16personalities.com/profiles/9e449530db6cb)
 
 ![](../assets/img/others/mbti.png){: w="800px"}
 
 <div style="height: 50px;"></div>
 
 
-**Enneagram Type** [Type Six Wing Five](https://www.enneagraminstitute.com/type-6)
+**Enneagram Type** &nbsp;&nbsp;&nbsp;&nbsp; <b style="color:green;">Type Six Wing Five</b> &nbsp;&nbsp;&nbsp;&nbsp; [Detailed Introduction](https://www.enneagraminstitute.com/type-6)
 
 ![](../assets/img/others/enne.png){: w="800px"}
 
 <div style="height: 40px;"></div>
 
 
-**The Big Five** [Detailed Report](https://bigfive-test.com/result/649db4e59de5fc00087594de)
+**The Big Five** &nbsp;&nbsp;&nbsp;&nbsp; <b style="color:green;">Result as the table shown below</b> &nbsp;&nbsp;&nbsp;&nbsp; [My Detailed Report](https://bigfive-test.com/result/649db4e59de5fc00087594de)
 
 ![](../assets/img/others/bigfive.png){: w="1000px"}
 

@@ -1,7 +1,7 @@
 ---
 title: Graphics | Related Math
 categories: [Computer Science, Computer Graphics]
-tags: [tech, computer graphics, 23winter, 15-662]
+tags: [tech, computer graphics, 24spring, 15-662]
 img_path: /assets/img/post/2023-12-19-662math/
 math: True
 ---
