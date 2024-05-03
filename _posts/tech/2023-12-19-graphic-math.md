@@ -1,6 +1,6 @@
 ---
-title: Graphics | Related Math
-categories: [Computer Science, Computer Graphics]
+title: Graphics Math
+categories: [Computer Graphics & Game, Foudations]
 tags: [tech, computer graphics, 24spring, 15-662]
 img_path: /assets/img/post/2023-12-19-662math/
 math: True

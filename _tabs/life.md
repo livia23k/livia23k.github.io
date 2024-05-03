@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Life"
-order: 4
-# icon: fas fa-pen-to-square
+order: 5
 icon: fa-solid fa-dove
+paginate: true
 ---
 
 {% include subhome.html category="life" %}

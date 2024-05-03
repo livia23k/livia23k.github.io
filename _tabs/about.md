@@ -3,8 +3,9 @@
 layout: post
 toc: true
 icon: fas fa-sailboat
-order: 100
+order: 7
 img_path: /assets/img/others/
+permalink: /about/
 ---
 
 <div style="height: 1px;"></div>
@@ -13,7 +14,7 @@ img_path: /assets/img/others/
 
 <div style="height: 20px;"></div>
 
-Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electrical and Computer Engineering at Carnegie Mellon University and am passionate about becoming a computer engineer, with a specialization in graphics and game engine development. This site is built for recording my thoughts, covering both my study, career path and my life. Hope it could witness my growth.
+Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electrical and Computer Engineering at Carnegie Mellon University and am passionate about becoming a computer engineer, with a specialization in graphics rendering and game engine development. This site is built for recording everything I love. Hope it could witness my growth.
 
 <div style="height: 25px;"></div>
 
@@ -26,24 +27,10 @@ Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electri
 <p style="text-align:left;"><b>Carnegie Mellon University</b><span style="float:right;">Pittsburgh, PA, U.S.</span></p>
 <p style="text-align:left;">Master of Science in Electrical and Computer Engineering<span style="float:right;">Aug. 2023 - May 2025</span></p>
 
-<p style="text-align:left;font-weight: bold;color:DarkGray;">Courses:</p>
-
-<p style="text-align:left;margin-left: 30px;color:DarkGray;">(23Fall) Foundations of Computer Systems, Building Reliable Distributed System, Introdction to Computer Security;</p>
-
-<p style="text-align:left;margin-left: 30px;color:DarkGray;">(24Spring) Computer Graphics, How to Write Fast Code II, Introduction to Game Design; Parallel Computer Architecture and Programming (Partial);</p>
-
 <div style="height: 15px;"></div>
 
 <p style="text-align:left;height:20px;"><b>Tiangong University</b><span style="float:right;">Tianjin, China</span></p>
 <p style="text-align:left;height:20px;">Bachelor of Engineering in Computer Science and Technology<span style="float:right;">Aug. 2018 - Jun. 2022</span></p>
-
-<p style="text-align:left;font-weight: bold;color:DarkGray;">Courses:</p>
-
-<p style="text-align:left;margin-left: 30px;color:DarkGray;">(Fundamental) Calculas, Linear Algebra, Probabilistic, Data Structure and Algorithms;</p>
-
-<p style="text-align:left;margin-left: 30px;color:DarkGray;">(System) Principles of Computer Composition, Compile System, Operating System, Computer Networking, Database, Cloud and Distributed System;</p>
-
-<p style="text-align:left;margin-left: 30px;color:DarkGray;">(AI) Machine Learning, Computer Vision, Digital Image Processing, Reinforcement Learning;</p>
 
 <div style="height: 25px;"></div>
 
@@ -60,7 +47,7 @@ Hi all! This is Wenxin (Livia) Lai. I'm now pursuing my master degree in Electri
 <div style="height: 50px;"></div>
 
 
-**Enneagram Type** &nbsp;&nbsp;&nbsp;&nbsp; <b style="color:green;">Type Six Wing Five</b> &nbsp;&nbsp;&nbsp;&nbsp; [Detailed Introduction](https://www.enneagraminstitute.com/type-6)
+**Enneagram Type** &nbsp;&nbsp;&nbsp;&nbsp; <b style="color:green;">Type Six Wing Five</b> &nbsp;&nbsp;&nbsp;&nbsp; [Official Description](https://www.enneagraminstitute.com/type-6)
 
 ![](enne.png){: w="800px"}
 

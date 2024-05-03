@@ -1,5 +1,5 @@
 ---
-title: Security | Cryptography | RSA, DH, ECC
+title: Cryptography | RSA, DH, ECC
 categories: [Computer Science, Computer Security]
 tags: [tech, computer security, 23fall, 18-730, review]
 math: True

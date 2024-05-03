@@ -1,5 +1,5 @@
 ---
-title: Security | Authentication
+title: Authentication
 categories: [Computer Science, Computer Security]
 tags: [tech, computer security, 23fall, 18-730, review, xmind]
 ---

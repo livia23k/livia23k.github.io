@@ -1,6 +1,6 @@
 ---
-title: Novel | 悉达多 by Hermann Hesse
-categories: [Literature, Novel]
+title: 悉达多 by Hermann Hesse
+categories: [Food for Soul, Novel]
 tags: [life, reading, excerpt, comment]
 ---
 

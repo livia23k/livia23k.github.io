@@ -1,6 +1,6 @@
 ---
-title: Media Ecology | 娱乐至死 by Neil Postman
-categories: [Literature, Media Ecology]
+title: 娱乐至死 by Neil Postman
+categories: [Food for Soul, Social Science]
 tags: [life, reading, excerpt, comment]
 ---
 
