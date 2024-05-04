@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Tech"
-order: 5
+order: 22
 icon: fa fa-ship
 ---
 

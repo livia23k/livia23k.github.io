@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Life"
-order: 5
+order: 21
 icon: fa-solid fa-dove
 paginate: true
 ---

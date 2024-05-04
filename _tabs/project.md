@@ -1,6 +1,6 @@
 ---
 icon: fa-solid fa-ferry
-order: 4
+order: 23
 ---
 
 {% include subhome.html category="project" %}
