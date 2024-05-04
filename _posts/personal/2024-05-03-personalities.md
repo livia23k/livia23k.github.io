@@ -1,6 +1,6 @@
 ---
 title: My Personalities
-categories: [Personal, Identification]
+categories: [Personal, Unspecified]
 tags: [life, identification, personality]
 img_path: /assets/img/others/
 ---
