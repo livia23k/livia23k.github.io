@@ -1,6 +1,6 @@
 ---
 title: 娱乐至死 by Neil Postman
-categories: [Food for Soul, Social Science]
+categories: [Food for Soul, Reading]
 tags: [life, reading, excerpt, comment]
 ---
 

@@ -1,8 +1,7 @@
 ---
 title: 罪与罚 by Fyodor Dostoevsky
-categories: [Food for Soul, Novel]
+categories: [Food for Soul, Reading]
 tags: [life, reading, excerpt]
-pin: true
 ---
 
 ## 书摘

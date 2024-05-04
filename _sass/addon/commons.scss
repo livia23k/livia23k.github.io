@@ -306,29 +306,29 @@ sup {
 
 /* --- post --- */
 
-.preview-img {
-  aspect-ratio: 40 / 21;
-  width: 100%;
-  overflow: hidden;
+// .preview-img {
+//   aspect-ratio: 40 / 21;
+//   width: 100%;
+//   overflow: hidden;
 
-  @extend %rounded;
+//   @extend %rounded;
 
-  &:not(.no-bg) {
-    background: var(--img-bg);
-  }
+//   &:not(.no-bg) {
+//     background: var(--img-bg);
+//   }
 
-  img {
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
+//   img {
+//     height: 100%;
+//     -o-object-fit: cover;
+//     object-fit: cover;
 
-    @extend %rounded;
+//     @extend %rounded;
 
-    @at-root #post-list & {
-      width: 100%;
-    }
-  }
-}
+//     @at-root #post-list & {
+//       width: 100%;
+//     }
+//   }
+// }
 
 .post-preview {
   @extend %rounded;
@@ -507,41 +507,41 @@ main {
   display: inline-flex;
 }
 
-.shimmer {
-  overflow: hidden;
-  position: relative;
-  background: var(--img-bg);
+// .shimmer {
+//   overflow: hidden;
+//   position: relative;
+//   background: var(--img-bg);
 
-  &::before {
-    content: '';
-    position: absolute;
-    background: var(--shimmer-bg);
-    height: 100%;
-    width: 100%;
-    -webkit-animation: shimmer 1.3s infinite;
-    animation: shimmer 1.3s infinite;
-  }
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     background: var(--shimmer-bg);
+//     height: 100%;
+//     width: 100%;
+//     -webkit-animation: shimmer 1.3s infinite;
+//     animation: shimmer 1.3s infinite;
+//   }
 
-  @-webkit-keyframes shimmer {
-    0% {
-      transform: translateX(-100%);
-    }
+//   @-webkit-keyframes shimmer {
+//     0% {
+//       transform: translateX(-100%);
+//     }
 
-    100% {
-      transform: translateX(100%);
-    }
-  }
+//     100% {
+//       transform: translateX(100%);
+//     }
+//   }
 
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%);
-    }
+//   @keyframes shimmer {
+//     0% {
+//       transform: translateX(-100%);
+//     }
 
-    100% {
-      transform: translateX(100%);
-    }
-  }
-}
+//     100% {
+//       transform: translateX(100%);
+//     }
+//   }
+// }
 
 .embed-video {
   width: 100%;

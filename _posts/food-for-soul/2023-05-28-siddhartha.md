@@ -1,6 +1,6 @@
 ---
 title: 悉达多 by Hermann Hesse
-categories: [Food for Soul, Novel]
+categories: [Food for Soul, Reading]
 tags: [life, reading, excerpt, comment]
 ---
 

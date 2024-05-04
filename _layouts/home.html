@@ -1,118 +1,189 @@
 ---
 layout: default
-refactor: truncate
+title: Home
+icon: fa-solid fa-hat-wizard
+toc: true
 ---
 
-{% include lang.html %}
+<html lang="en">
+    
+<head>
+    
+</head>
 
-{% assign pinned = site.posts | where: 'pin', 'true' %}
-{% assign default = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
 
-{% assign posts = '' | split: '' %}
+<body>
+  
+    <div style="margin-bottom: 35px;"></div>
 
-<!-- Get pinned posts -->
+    <div class="home-block" style="margin: 0% 0px 100px min(30px, 4%); width:100%; height:100%;">
+    
+        <div class="ani-hello"></div>
 
-{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign pinned_num = pinned.size | minus: offset %}
-
-{% if pinned_num > 0 %}
-  {% for i in (offset..pinned.size) limit: pinned_num %}
-    {% assign posts = posts | push: pinned[i] %}
-  {% endfor %}
-{% else %}
-  {% assign pinned_num = 0 %}
-{% endif %}
-
-<!-- Get default posts -->
-
-{% assign default_beg = offset | minus: pinned.size %}
-
-{% if default_beg < 0 %}
-  {% assign default_beg = 0 %}
-{% endif %}
-
-{% assign default_num = paginator.posts | size | minus: pinned_num %}
-{% assign default_end = default_beg | plus: default_num | minus: 1 %}
-
-{% if default_num > 0 %}
-  {% for i in (default_beg..default_end) %}
-    {% assign posts = posts | push: default[i] %}
-  {% endfor %}
-{% endif %}
-
-<div id="post-list" class="flex-grow-1 px-xl-1">
-  {% for post in posts %}
-    <article class="card-wrapper card">
-      <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
-        {% assign card_body_col = '12' %}
-
-        {% if post.image %}
-          {% assign src = post.image.path | default: post.image %}
-          {% unless src contains '//' %}
-            {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
-          {% endunless %}
-
-          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
-
-          {% assign lqip = null %}
-
-          {% if post.image.lqip %}
-            {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
-          {% endif %}
-
-          <div class="col-md-5">
-            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
-          </div>
-
-          {% assign card_body_col = '7' %}
-        {% endif %}
-
-        <div class="col-md-{{ card_body_col }}">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                {% include no-linenos.html content=post.content %}
-                {{ content | markdownify | strip_html | truncate: 200 | escape }}
-              </p>
+        <div class="home-intro" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))">
+            <div style="width: min(600px, 90%);">
+                <p style="margin-top: 30px;">
+                    This is Wenxin (Livia) Lai. I’m now pursuing my master degree in Electrical and Computer Engineering 
+                    at Carnegie Mellon University. 
+                    <br>
+                    Starting in spring 2024, I've devoted myself to learning about 
+                    game engines and graphics rendering technologies. 
+                    It's a late start, but I'm working to bridge the gaps.
+                </p>
+                <p style="margin-top: 30px;">
+                    This site is built for recording everything I love. Hope it could witness my growth.
+                </p>
             </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                {% include datetime.html date=post.date lang=lang %}
-
-                <!-- categories -->
-                {% if post.categories.size > 0 %}
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    {% for category in post.categories %}
-                      {{ category }}
-                      {%- unless forloop.last -%},{%- endunless -%}
-                    {% endfor %}
-                  </span>
-                {% endif %}
-              </div>
-
-              {% if post.pin %}
-                <div class="pin ms-1">
-                  <i class="fas fa-thumbtack fa-fw"></i>
-                  <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
-                </div>
-              {% endif %}
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
+            <img src="assets/img/site/avatar_ios.jpg" 
+            style="width:200px; height:200px; align-items: center; justify-content: center;" 
+            onerror="this.style.display='none'">
         </div>
-      </a>
-    </article>
-  {% endfor %}
-</div>
-<!-- #post-list -->
 
-{% if paginator.total_pages > 1 %}
-  {% include post-paginator.html %}
-{% endif %}
+        <div class="home-cols" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, max-content)); gap:15px;">
+            <div class="home-col-career" style="line-height: 30px;"> 
+                <h3 class="home-col-title">Career Interests</h3>
+                <ul class="home-col-ul">
+                    <li class="home-col-ul-li">Computer Graphics;</li>
+                    <li class="home-col-ul-li">Rendering;</li>
+                    <li class="home-col-ul-li">Game Engine Dev;</li>
+                    <li class="home-col-ul-li">Game Dev;</li>
+                </ul>
+            </div>
+            <div class="home-col-personal" style="line-height: 30px;"> 
+                <h3 class="home-col-title">Personal Interests</h3>
+                <ul class="home-col-ul">
+                    <li class="home-col-ul-li">Video Games;</li>
+                    <li class="home-col-ul-li">Reading;</li>
+                    <li class="home-col-ul-li">Movies;</li>
+                    <li class="home-col-ul-li">Handwork;</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="home-col-title">Site Icon Notation</h3>
+
+        <div style="margin-top: 20px;"></div>
+
+        <div class="nav-grid-home">
+            <li class="nav-item-home{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+              <a href="{{ '/' | relative_url }}" class="nav-link">
+                <i class="fa-fw fas fa-home"></i>
+                <span>&nbsp;&nbsp;&nbsp;HOME</span>
+              </a>
+            </li>
+            {% for tab in site.tabs %}
+                <li class="nav-item-home{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+                  <a href="{{ tab.url | relative_url }}" class="nav-link">
+                    <i class="fa-fw {{ tab.icon }}"></i>
+                    {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+                    &nbsp;&nbsp;&nbsp;<span>{{ site.data.locales[include.lang].tabs[tab_name] | default: tab.title | upcase }}</span>
+                  </a>
+                </li>
+              <!-- .nav-item-home -->
+            {% endfor %}
+          </div>
+          <!-- .nav-grid-homes -->
+    </div>
+    
+</body>
+</html>
+
+    
+<style>    
+    .ani-hello {
+        font-size: 60px;
+        font-weight: bold;
+        color: #757575;
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block; /* Make sure the div behaves like text */
+        line-height: 80px;
+        border-right: 0.15em solid rgb(236, 223, 201); /* Cursor */
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: rgb(236, 223, 201); }
+    }
+
+    .home-col-title {
+        color:rgb(115, 115, 115); 
+        font-weight: 800;
+    }
+
+    .home-col-ul {
+        list-style: none;
+        padding: 0px;
+    }
+
+    .home-col-ul-li {
+        opacity: 0.7;
+    }
+
+    
+  .nav-grid-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 150px));
+    gap: 15px;
+    list-style: none;
+    padding: 0px;
+    font-size: 95%;
+    opacity: 0.7;
+    width: min(700px, 90%);
+  }
+
+  .nav-grid-home li.nav-item-home {
+
+    a.nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      border-radius: 0.75rem;
+      padding-top: 0.6rem;
+      padding-left: 1rem;
+      padding-bottom: 0.6rem;
+
+      &:hover {
+        background-color: var(--sidebar-hover-bg);
+      }
+
+      span {
+        font-size: 90%;
+        letter-spacing: 0.2px;
+      }
+    }
+
+    &.active {
+      .nav-link {
+        color: rgb(159, 131, 100);
+        background-color: var(--sidebar-hover-bg);
+
+        span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+</style>
+
+
+<script>
+    const el = document.querySelector('.ani-hello');
+    const text = 'Hello';
+    let idx = 0;
+
+    function typeWriter() {
+        if (idx < text.length) {
+            el.textContent += text.charAt(idx);
+            idx++;
+            setTimeout(typeWriter, 150);
+        } else {
+            // Stop the cursor blinking after typing is complete
+            el.style.animation = 'none';
+            el.style.borderRight = 'none'; // Optionally remove the cursor entirely
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', typeWriter); // Ensures DOM is fully loaded
+</script>
