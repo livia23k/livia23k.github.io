@@ -197,6 +197,8 @@
         icon.classList.toggle('fa-angle-up', !isCurrentlyVisible);
         icon.classList.toggle('fa-angle-down', isCurrentlyVisible);
         localStorage.setItem('toggle_' + targetId, !isCurrentlyVisible);
+
+        updateCollapseAllIcon();
       });
   });
 

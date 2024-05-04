@@ -6,7 +6,6 @@ toc: true
 icon: fas fa-sailboat
 order: 7
 img_path: /assets/img/others/
-permalink: /about/
 ---
 
 
