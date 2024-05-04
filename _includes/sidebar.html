@@ -118,20 +118,20 @@
   </div>
 
 
-  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+  <div class="sidebar-bottom d-flex flex-wrap  align-items-center">
 
-      <a href=" " style="opacity: 0.6;list-style: none; margin-left: -10px;">
+      <a href=" " style="opacity: 0.6;list-style: none;">
         <button id="collapseAll" style="border: none;"><i class="fa-solid fa-expand"></i></button>
       </a>
 
     {% unless site.theme_mode %}
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode" style="margin-right:15px;">
         <i class="fas fa-adjust"></i>
       </button>
 
-      {% if site.data.contact.size > 0 %}
+      <!-- {% if site.data.contact.size > 0 %}
         <span class="icon-border"></span>
-      {% endif %}
+      {% endif %} -->
     {% endunless %}
 
     {% for entry in site.data.contact %}
