@@ -96,9 +96,9 @@ toc: true
         color: #757575;
         white-space: nowrap;
         overflow: hidden;
-        display: inline-block; /* Make sure the div behaves like text */
+        display: inline-block;
         line-height: 80px;
-        border-right: 0.15em solid rgb(236, 223, 201); /* Cursor */
+        border-right: 0.15em solid rgb(236, 223, 201);
     }
 
     @keyframes blink-caret {
@@ -179,11 +179,10 @@ toc: true
             idx++;
             setTimeout(typeWriter, 150);
         } else {
-            // Stop the cursor blinking after typing is complete
             el.style.animation = 'none';
-            el.style.borderRight = 'none'; // Optionally remove the cursor entirely
+            el.style.borderRight = 'none';
         }
     }
 
-    document.addEventListener('DOMContentLoaded', typeWriter); // Ensures DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', typeWriter);
 </script>
