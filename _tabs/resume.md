@@ -5,7 +5,7 @@ title: "Resume"
 toc: true
 icon: fas fa-sailboat
 order: 24
-img_path: /assets/img/others/
+img_path: /assets/img/
 ---
 
 
@@ -60,6 +60,18 @@ img_path: /assets/img/others/
 ## Project
 
 <div style="height: 20px;"></div>
+
+- <p style="font-weight:700;">Software Rasterizer implemented based on Scotty3D &nbsp;&nbsp;<a href="{{site.baseurl}}/posts/15662-rasterizer/">Link</a> </p>
+
+    - **Brief** &nbsp;&nbsp; implemented a complete rasterization graphics rendering pipeline, supporting offline rendering of model scenes.
+
+    - **Features** &nbsp;&nbsp; Bresenham Line Algorithm, Depth test, Alpha blend, Model Display Mode, Mipmap, Bilinear / Trilinear barycentric interpolation, MXAA.
+
+![](/post/2024-05-04-rasterizer/bunnie.png){: w="400px"}
+_Preview: Stanford Bunny_
+
+
+
 
 [saving space]
 
