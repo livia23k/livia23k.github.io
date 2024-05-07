@@ -764,9 +764,14 @@ $btn-mb: 0.5rem;
     user-select: none;
   }
 
+
+  // Personal Custom Start ====================================================
+
+  // Navigation Icon
+
   .nav-grid {
     display: grid;
-    grid-template-columns: repeat(4, 20%); /* 2 columns */
+    grid-template-columns: repeat(4, 20%);
     gap: 15px;
     list-style: none;
     justify-content: center;
@@ -799,7 +804,7 @@ $btn-mb: 0.5rem;
 
     &.active {
       .nav-link {
-        color: $sidebar-active-color; // or rgba(201, 158, 98, 0.886) // sidebar icon active color
+        color: $sidebar-active-color;
         background-color: var(--sidebar-hover-bg);
 
         span {
@@ -808,6 +813,8 @@ $btn-mb: 0.5rem;
       }
     }
   }
+
+  // Navigation Post
 
   .nav-category {
     display: block;
@@ -870,6 +877,22 @@ $btn-mb: 0.5rem;
       text-underline-offset: 4px;
     }
   }
+
+  .posts li.active {
+    background-color: $sidebar-active-color;
+    font-weight: bold;
+
+    span {
+      opacity: 0;
+    }
+
+    a {
+      color: white;
+    }
+  }
+
+  // Personal Custom End ====================================================
+
 
   .sidebar-bottom {
     position: fixed;
