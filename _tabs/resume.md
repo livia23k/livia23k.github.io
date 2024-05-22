@@ -81,12 +81,63 @@ img_path: /assets/img/
 
 ## Projects
 
+#### 2024 Summer
+
+<!-- ================================================================================================================================================ -->
+
 <div style="height: 20px;"></div>
 
+<div class="proj"> 
+    <p class="proj-title">◼︎ Shadows&nbsp;&nbsp;
+        <a href="{{site.baseurl}}/posts/games202-shadow/">[Link]</a> 
+    </p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Brief</p>
+    <p class="proj-sub-content">Implemented the core functions for rendering Hard and Soft shadows based on already built Shadow Maps.</p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Features</p>
+    <p class="proj-sub-content">Shadow Maps, Percentage-Closer Filtering, Percentage-Closer Soft Shadows, Poission Disk Sampling.</p>
+</div>
+
+![](/post/2024-05-13-shadow/preview.png){: w="700px"}
+_Preview: Render Result of GAMES202 Mary_
+
+<!-- ================================================================================================================================================ -->
+
+#### 2024 Spring
+
+<div style="height: 20px;"></div>
+
+<!-- ================================================================================================================================================ -->
 
 <div class="proj">
-    <p style="font-weight:700;">◼︎ Software Rasterizer implemented based on Scotty3D &nbsp;&nbsp;
-        <a href="{{site.baseurl}}/posts/15662-rasterizer/">Link</a> 
+    <p class="proj-title">◼︎ Mesh Edit&nbsp;&nbsp;
+        <a href="{{site.baseurl}}/posts/15662-meshedit/">[Link]</a> 
+    </p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Brief</p>
+    <p class="proj-sub-content">Implemented some local and global operations for model editting based on Halfedge data structure.</p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Features</p>
+    <p class="proj-sub-content">(Local Op) Edge Flip, Edge Split, Edge Collapse, Face Extrude; (Global Op) Triangulation, Linear Subdivision, Catmull-Clark Subdivision, Loop Subdivision.</p>
+</div>
+
+![](/post/2024-03-13-meshedit/meshpreview.png){: w="400px"}
+_Preview: Editting Stanford Bunny_
+
+<!-- ================================================================================================================================================ -->
+
+<div class="proj">
+    <p class="proj-title">◼︎ Software Rasterizer&nbsp;&nbsp;
+        <a href="{{site.baseurl}}/posts/15662-rasterizer/">[Link]</a> 
     </p>
 </div>
 
@@ -97,17 +148,21 @@ img_path: /assets/img/
 
 <div class="proj-sub">
     <p class="proj-sub-title">Features</p>
-    <p class="proj-sub-content">Bresenham Line Algorithm, Depth test, Alpha blend, Model Display Mode, Mipmap, Bilinear / Trilinear barycentric interpolation, MXAA.</p>
+    <p class="proj-sub-content">Model Display Mode (Wire/Flatten/Interpolation), Bresenham Line Algorithm, Depth test, Alpha Blend, Mipmap, Bilinear / Trilinear barycentric interpolation, MXAA.</p>
 </div>
 
-
-![](/post/2024-05-04-rasterizer/bunnie.png){: w="400px"}
+![](/post/2024-02-14-rasterizer/bunnie.png){: w="400px"}
 _Preview: Render Result of Stanford Bunny_
 
+<!-- ================================================================================================================================================ -->
 
 
+
+<div style="height: 30px;"></div>
 
 [saving space]
+
+<div style="height: 30px;"></div>
 
 <div style="height: 25px;"></div>
 
@@ -117,7 +172,7 @@ _Preview: Render Result of Stanford Bunny_
 
 <div style="height: 20px;"></div>
 
-See <a href="{{site.baseurl}}/posts/personalities/">link</a> for my detailed report.
+See &nbsp;<a href="{{site.baseurl}}/posts/personalities/">[Link]</a>&nbsp; for my detailed report.
 
 &nbsp;
 
@@ -129,7 +184,7 @@ See <a href="{{site.baseurl}}/posts/personalities/">link</a> for my detailed rep
         text-align:left;
         font-weight: bold;
         color:DimGray;
-        font-size: 15px;
+        font-size: 17px;
     }
 
     .course-sub {
@@ -149,14 +204,19 @@ See <a href="{{site.baseurl}}/posts/personalities/">link</a> for my detailed rep
         align-items: center;
         justify-content: start;
         color:DimGray;
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .proj-sub {
         display:grid; 
         grid-template-columns: 100px auto;
-        font-size: 14px;
+        font-size: 16px;
         gap: 10px;
+    }
+
+    .proj-title {
+        font-weight: 700;
+        font-size: 18px;
     }
 
     .proj-sub-title {
@@ -168,7 +228,7 @@ See <a href="{{site.baseurl}}/posts/personalities/">link</a> for my detailed rep
         align-items: center;
         justify-content: start;
         color:DimGray;
-        font-size: 13px;
+        font-size: 15px;
     }
 
 </style>
