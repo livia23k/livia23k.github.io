@@ -38,7 +38,7 @@ img_path: /assets/img/
 
 <div class="course-sub">
     <p class="course-sub-title">More Later</p>
-    <p class="course-sub-content">Computer Game Programming, Real Time Graphics, Computer Vision for Engineers, Cloud Infrastructure and Servicess;</p>
+    <p class="course-sub-content">Computer Game Programming, Real Time Graphics, Computer Vision for Engineers, Cloud Infrastructure and Services;</p>
 </div>
 
 <div style="height: 15px;"></div>
@@ -115,6 +115,48 @@ _Preview: Render Result of GAMES202 Mary_
 <!-- ================================================================================================================================================ -->
 
 <div class="proj">
+    <p class="proj-title">◼︎ Animation&nbsp;&nbsp;
+        <a href="{{site.baseurl}}/posts/15662-animation/">[Link]</a> 
+    </p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Brief</p>
+    <p class="proj-sub-content">Implemented Forward and Backward Kinematics for supporting smooth child-to-parent and parent-to-child skeleton transformations. Add Linear Blend Skinning to get the mesh to follow the movements of the skeleton. Complete a simple Particle System.</p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Features</p>
+    <p class="proj-sub-content">Hermite Curve, Catumull-Rom Spline, Linear Blend Skinning, Particle Simulation.</p>
+</div>
+
+![](/post/2024-04-24-animation/animationpreview.png){: w="400px"}
+_Preview: Animate Screen_
+
+<!-- ================================================================================================================================================ -->
+
+<div class="proj">
+    <p class="proj-title">◼︎ Path Tracing&nbsp;&nbsp;
+        <a href="{{site.baseurl}}/posts/15662-pathtracing/">[Link]</a> 
+    </p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Brief</p>
+    <p class="proj-sub-content">Implemented the path tracing pipeline based on rendering equation of Monte Carlo integration.</p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Features</p>
+    <p class="proj-sub-content">BVH accelarating data structure, BSDF, Materials(Diffuse/Mirror/ Refract/Glass), PDF/CDF Sampling, Uniform Sampling, Multiple Importance Sampling, Environment Lighting.</p>
+</div>
+
+![](/post/2024-04-03-pathtracing/bunnie.png){: w="400px"}
+_Preview: Rendering Stanford Bunny_
+
+<!-- ================================================================================================================================================ -->
+
+<div class="proj">
     <p class="proj-title">◼︎ Mesh Edit&nbsp;&nbsp;
         <a href="{{site.baseurl}}/posts/15662-meshedit/">[Link]</a> 
     </p>
@@ -152,15 +194,10 @@ _Preview: Editting Stanford Bunny_
 </div>
 
 ![](/post/2024-02-14-rasterizer/bunnie.png){: w="400px"}
-_Preview: Render Result of Stanford Bunny_
+_Preview: Rendering Stanford Bunny_
 
 <!-- ================================================================================================================================================ -->
 
-
-
-<div style="height: 30px;"></div>
-
-[saving space]
 
 <div style="height: 30px;"></div>
 
