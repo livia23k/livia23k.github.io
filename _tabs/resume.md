@@ -68,11 +68,11 @@ img_path: /assets/img/
 
 ---
 
-## Technical Skills
+<!-- ## Technical Skills
 
 <div style="height: 20px;"></div>
 
-[saving space]
+[saving space] -->
 
 
 <div style="height: 25px;"></div>
@@ -81,7 +81,35 @@ img_path: /assets/img/
 
 ## Projects
 
+
+
 #### 2024 Summer
+
+<!-- ================================================================================================================================================ -->
+
+<div style="height: 20px;"></div>
+
+<div class="proj"> 
+    <p class="proj-title">◼︎ Unity Mini Game - Haunted Jaunt &nbsp;&nbsp;
+        <a href="{{site.baseurl}}/posts/unity-game-haunted-jaunt/">[Link]</a> 
+    </p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Brief</p>
+    <p class="proj-sub-content">Single-player game where the player can choose haunted house levels, arm themselves, avoid being chased by ghosts, bypass traps, and find the exit to escape.</p>
+</div>
+
+<div class="proj-sub">
+    <p class="proj-sub-title">Features</p>
+    <p class="proj-sub-content">(Functions) Dynamic resource-loading, Memory management, Network Module, Event Manager, Trigger Manager;<br>
+    (Behavior) Consistency between keyboard and control joystick input, Layerd Animation;<br>
+    (Tech) NavMesh, Libuv, Google Protobuf;<br>
+    (Shader) Outliner, Dissolve, Global Scanner.</p>
+</div>
+
+![](/post/2024-08-16-hautedjaunt/johnlemon.png){: w="400px"}
+_Preview: John Lemon in Haunted Jaunt_
 
 <!-- ================================================================================================================================================ -->
 
