@@ -64,11 +64,11 @@ img_path: /assets/img/
     <p class="course-sub-content">Machine Learning, Computer Vision, Digital Image Processing, Reinforcement Learning;</p>
 </div>
 
-<div style="height: 25px;"></div>
+<!-- <div style="height: 25px;"></div>
 
 ---
 
-<!-- ## Technical Skills
+## Technical Skills
 
 <div style="height: 20px;"></div>
 
@@ -85,9 +85,9 @@ img_path: /assets/img/
 
 #### 2024 Summer
 
-<!-- ================================================================================================================================================ -->
-
 <div style="height: 20px;"></div>
+
+<!-- ================================================================================================================================================ -->
 
 <div class="proj"> 
     <p class="proj-title">◼︎ Unity Mini Game - Haunted Jaunt &nbsp;&nbsp;
@@ -108,12 +108,10 @@ img_path: /assets/img/
     (Shader) Outliner, Dissolve, Global Scanner.</p>
 </div>
 
-![](/post/2024-08-16-hautedjaunt/johnlemon.png){: w="400px"}
+![](/post/2024-08-16-hautedjaunt/preview.png){: w="400px"}
 _Preview: John Lemon in Haunted Jaunt_
 
 <!-- ================================================================================================================================================ -->
-
-<div style="height: 20px;"></div>
 
 <div class="proj"> 
     <p class="proj-title">◼︎ Shadows&nbsp;&nbsp;

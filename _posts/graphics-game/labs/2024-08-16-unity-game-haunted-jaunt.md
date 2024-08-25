@@ -1,5 +1,5 @@
 ---
-title: Unity Mini Game - 鬼屋之旅
+title: Unity Mini Game - 鬼屋之旅 Haunted Jaunt
 categories: [Computer Graphics & Game, Game]
 tags: [tech, game, unity, game demo, project]
 img_path: /assets/img/post/2024-08-16-hautedjaunt/
