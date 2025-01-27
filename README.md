@@ -19,6 +19,8 @@ bundle
 
 ```
 bundle exec jekyll s
+or
+bundle exec jekyll serve --port <port>
 ```
 
 3. trace fault
